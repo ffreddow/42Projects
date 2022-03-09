@@ -6,19 +6,28 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 21:36:01 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/07 12:10:17 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/09 18:35:10 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
 	void	*mlx;
-	void	*mlx_window;
+	void	*img;
+	t_map	*map;
 
+	if (argc != 2)
+	{
+		ft_printf("False number of arguments\n");
+		return (0);
+	}
+	map = (t_map *)ft_calloc(1, sizeof(t_map));
+	if (!map)
+		return (-1);
+	if (init_map(map, argv[1]) != 0)
+		return (0);
 	mlx = mlx_init();
-	mlx_window = mlx_new_window(mlx, 100, 100, "so_long");
-	mlx_loop(mlx);
 	return (0);
 }

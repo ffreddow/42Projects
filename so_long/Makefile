@@ -6,13 +6,13 @@
 #    By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 17:18:12 by tgerdes           #+#    #+#              #
-#    Updated: 2022/03/09 00:42:53 by fhenrich         ###   ########.fr        #
+#    Updated: 2022/03/09 13:11:17 by fhenrich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS = main.c
+SRCS = src/*.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -55,16 +55,17 @@ endif
 ${EXT_LIB}:
 	make -C ${MINILIBX}
 	cp ${MINILIBX}/${EXT_LIB} .
-	cp ${MINILIBX}/mlx.h .
+	cp ${MINILIBX}/mlx.h src
 
 libft.a:
 	make -C ${LIBFT}
+	cp ${LIBFT}/libft.h src
 
 archive:
 	ar rc ${NAME} ${OBJS}
 
 clean:
-		${RM} ${OBJS} a.out mlx.h
+		${RM} ${OBJS} a.out src/mlx.h src/libft.h
 
 fclean: clean
 		${RM} ${NAME} ${EXT_LIB}

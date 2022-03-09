@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 21:36:15 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 00:43:22 by fhenrich         ###   ########.fr       */
+/*   Created: 2022/03/09 15:42:07 by fhenrich          #+#    #+#             */
+/*   Updated: 2022/03/09 16:54:57 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "mlx.h"
+int	array_len(char **arr)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
+}
