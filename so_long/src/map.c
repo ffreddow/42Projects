@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:16:24 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/10 11:52:02 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:38:02 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,22 @@ int	init_map(t_map	*map, char *mapfile)
 	int	ret;
 
 	map->map = get_map(mapfile);
+	if (!map->map)
+		return (-1);
 	map->num_player = 0;
 	map->num_exit = 0;
 	map->num_collect = 0;
 	ret = verify_map(map);
 	if (ret == -1)
-		ft_printf("Incomplete Walls");
+		ft_printf("Incomplete Walls\n");
 	else if (ret == -2)
-		ft_printf("Wrong number of collectables");
+		ft_printf("Wrong number of collectables\n");
 	else if (ret == -3)
-		ft_printf("Wrong number of exits");
+		ft_printf("Wrong number of exits\n");
 	else if (ret == -4)
-		ft_printf("Wrong number of players");
+		ft_printf("Wrong number of players\n");
 	else if (ret == -5)
-		ft_printf("unknown tiles");
+		ft_printf("unknown tiles\n");
 	if (ret != 0)
 		return (-1);
 	return (0);
@@ -38,27 +40,25 @@ int	init_map(t_map	*map, char *mapfile)
 
 char	**get_map(char *mapfile)
 {
-	int			i;
 	char		**map;
-	char		**tmp;
-	const int	fd = open(ft_strjoin("map/", mapfile), O_RDONLY);
+	char		*tmp;
+	char		*tmp2;
+	const int	fd = open(ft_strjoin("maps/", mapfile), O_RDONLY);
 
-	map = 0;
+	if (fd < 0)
+		return (0);
 	tmp = 0;
-	i = 1;
-	while (!map || map[i - 1])
+	while (1)
 	{
-		map = (char **)ft_calloc(i, sizeof(char *));
-		if (!map)
-			perror("get_map");
-		if (ft_memmove(map, tmp, i * sizeof(char *)))
-			free(tmp);
-		map[i - 1] = get_next_line(fd);
-		tmp = map;
-		i++;
+		tmp2 = get_next_line(fd);
+		if (!tmp2)
+			break ;
+		tmp = ft_strjoin_gnl(tmp, tmp2);
+		free(tmp2);
 	}
-	free(tmp);
 	close(fd);
+	map = ft_split(tmp, '\n');
+	free(tmp);
 	return (map);
 }
 
@@ -66,9 +66,7 @@ int	verify_map(t_map *map)
 {
 	int			i;
 	int			a;
-	printf("test");
-	exit(0);
-	const int	len = ft_strlen(map->map[0]);
+	const int	len = sizeof(map->map[0]);
 
 	if (check_walls(map->map, len) != 0)
 		return (-1);

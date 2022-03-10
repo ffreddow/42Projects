@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 21:36:01 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 18:40:32 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:11:10 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	main(int argc, char *argv[])
 		return (-1);
 	if (init_map(map, argv[1]) != 0)
 		return (0);
-	mlx = mlx_init();
+	map_cleanup(map);
 	return (0);
 }

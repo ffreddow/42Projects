@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_new.c                                    :+:      :+:    :+:   */
+/*   cleanup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 15:32:21 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 12:36:33 by fhenrich         ###   ########.fr       */
+/*   Created: 2022/03/10 13:10:13 by fhenrich          #+#    #+#             */
+/*   Updated: 2022/03/10 13:10:31 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_strlen(const char *str)
+void	map_cleanup(t_map *map)
 {
-	int	ret;
+	int	i;
 
-	ret = 0;
-	if (!str)
-		return (0);
-	while (*str++)
-		ret++;
-	return (ret);
+	i = 0;
+	while (map->map[i])
+	{
+		free(map->map[i]);
+		i++;
+	}
+	free(map);
 }

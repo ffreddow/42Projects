@@ -6,14 +6,12 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 21:36:15 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 18:24:33 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:35:46 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-
-# define NOOP
 
 # include "mlx.h"
 # include "libft.h"
@@ -40,5 +38,6 @@ int		check_walls(char **map, int len);
 int		verify_map(t_map *map);
 int		check_tile(t_map *map, int i, int a);
 char	**get_map(char *mapfile);
+void	map_cleanup(t_map *map);
 
 #endif

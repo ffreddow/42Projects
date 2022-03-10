@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 16:22:43 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 12:06:14 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:12:00 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*read_file(int fd, char *file)
 			return (0);
 		}
 		buff[i] = 0;
-		file = ft_strjoin(file, buff);
+		file = ft_strjoin_gnl(file, buff);
 	}
 	free(buff);
 	return (file);

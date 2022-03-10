@@ -6,7 +6,7 @@
 #    By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 17:18:12 by tgerdes           #+#    #+#              #
-#    Updated: 2022/03/09 13:11:17 by fhenrich         ###   ########.fr        #
+#    Updated: 2022/03/10 11:58:35 by fhenrich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ MINILIBX = ./mlxmac
 		${CC} ${CFLAGS} -Imlxmac -c $< -o ${<:.c=.o}
 
 $(NAME): $(SRCS)
-	$(CC) -Lmlx -L $(MINILIBX) -lmlx -framework OpenGL -framework AppKit -L $(LIBFT) -lft $(SRCS) -o $(NAME)
+	$(CC) -g -Lmlx -L $(MINILIBX) -lmlx -framework OpenGL -framework AppKit -L $(LIBFT) -lft $(SRCS) -o $(NAME)
 
 endif
 
