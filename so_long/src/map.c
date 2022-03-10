@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:16:24 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 18:45:32 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/10 11:52:02 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	verify_map(t_map *map)
 {
 	int			i;
 	int			a;
+	printf("test");
+	exit(0);
 	const int	len = ft_strlen(map->map[0]);
 
 	if (check_walls(map->map, len) != 0)
@@ -114,10 +116,10 @@ int	check_walls(char **map, int len)
 	int			i;
 	int			a;
 	int			ret;
-	const int	arr_len = array_len(map);
+	const int	arr_len = sizeof(map);
 
 	i = 0;
-	while (map[i])
+	while (i < arr_len)
 	{
 		a = 0;
 		if (len != ft_strlen(map[i]))
@@ -131,8 +133,6 @@ int	check_walls(char **map, int len)
 		}
 		else if (map[i][0] != 1 || map[i][len] != 1)
 			return (-1);
-	printf("test");
-	exit(0);
 		i++;
 	}
 	return (0);
