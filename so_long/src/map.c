@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:16:24 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/23 09:43:01 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/03/25 09:27:39 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	init_map(t_map	*map, char *mapfile)
 		ft_printf("unknown tiles\n");
 	if (ret != 0)
 		return (-1);
+	get_player(map);
 	ft_printf("Map ok\n");
 	return (0);
 }
@@ -44,7 +45,7 @@ char	**get_map(char *mapfile)
 	char		**map;
 	char		*tmp;
 	char		*tmp2;
-	const int	fd = open(ft_strjoin("maps/", mapfile), O_RDONLY);
+	const int	fd = open(mapfile, O_RDONLY);
 
 	if (fd < 0)
 		return (0);
@@ -55,7 +56,7 @@ char	**get_map(char *mapfile)
 		if (!tmp2)
 			break ;
 		tmp = ft_strjoin_gnl(tmp, tmp2);
-		free(tmp2);
+		free((void *)tmp2);
 	}
 	close(fd);
 	map = ft_split(tmp, '\n');
@@ -67,7 +68,9 @@ int	verify_map(t_map *map)
 {
 	int			i;
 
-	if (check_walls(map->map))
+	map->size_x = ft_strlen(map->map[0]);
+	map->size_y = array_len(map->map);
+	if (check_walls(map))
 		return (-1);
 	i = check_tiles(map, 0, 0);
 	if (map->num_collect < 1)
@@ -107,28 +110,25 @@ int	check_tiles(t_map *map, int i, int a)
 	return (0);
 }
 
-int	check_walls(char **map)
+int	check_walls(t_map *map)
 {
 	int			i;
 	int			a;
-	int			ret;
-	const int	arr_len = array_len(map);
-	const int	len = ft_strlen(map[i]);
 
 	i = 0;
-	while (i < arr_len)
+	while (i < map->size_y)
 	{
 		a = 0;
-		if (len != ft_strlen(map[i]))
+		if (map->size_x != ft_strlen(map->map[i]))
 			return (-1);
-		if (i == 0 || i == arr_len - 1)
+		if (i == 0 || i == map->size_y - 1)
 		{
-			while (map[i][a] == '1')
+			while (map->map[i][a] == '1')
 				a++;
-			if (a != len)
+			if (a != map->size_x)
 				return (-1);
 		}
-		else if (map[i][0] != '1' || map[i][len - 1] != '1')
+		else if (map->map[i][0] != '1' || map->map[i][map->size_x - 1] != '1')
 			return (-1);
 		i++;
 	}

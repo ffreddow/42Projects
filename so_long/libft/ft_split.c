@@ -6,12 +6,15 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:25:03 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/01/09 12:35:55 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:20:00 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Component of ft_split. Counts the ammount of substrings needed.
+ */
 static size_t	ft_countsplits(const char *s, char c)
 {
 	size_t	i;
@@ -26,6 +29,14 @@ static size_t	ft_countsplits(const char *s, char c)
 	return (i);
 }
 
+/**
+ * Splits the input string at every appearence of the character c
+ * and creates a new string containing the snippet until the next 
+ * appearence
+ * @param s [char *] pointer to the input string
+ * @param c [char] divider character
+ * @return array of pointers to the created splits, NULL if an ERROR occured
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;

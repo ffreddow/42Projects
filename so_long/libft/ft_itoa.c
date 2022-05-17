@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:11:21 by fhenrich          #+#    #+#             */
-/*   Updated: 2021/12/21 11:36:37 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/12 13:40:35 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ static int	ft_count_digits(long i)
 	return (counter);
 }
 
+/**
+ * 
+ */
 static char	*ft_writestr_rev(char *str, long n, int is_negative)
 {
 	*str = '\0';
@@ -48,6 +51,11 @@ static char	*ft_writestr_rev(char *str, long n, int is_negative)
 	return (str);
 }
 
+/**
+ * Converts intger to string
+ * @param n [int] integer to convert
+ * @return [char *] to the string it created
+ */
 char	*ft_itoa(int n)
 {
 	char	*str;

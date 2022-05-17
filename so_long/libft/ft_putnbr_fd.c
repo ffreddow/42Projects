@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:06:51 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/02/02 14:45:22 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:39:36 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ static int	ft_count_digits(int i)
 	return (counter);
 }
 
+/**
+ * writes a number to the given filedescriptor
+ * @param n [int] number to write
+ * @param fd [int] filedescriptor to write to
+ * @return none
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	int		divider;

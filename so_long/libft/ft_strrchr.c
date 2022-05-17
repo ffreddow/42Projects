@@ -6,12 +6,19 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:48:07 by fhenrich          #+#    #+#             */
-/*   Updated: 2021/12/21 10:40:43 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:16:28 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Searches for the las appearence of a character in the input string
+ * @param str [const char *] pointer to input string
+ * @param c [int] character to search for
+ * @return pointer to last appearence of c, pointer to start if c is not a
+ * character, pointer to the end of input string, NULL if c is not found
+ */
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*tmp;

@@ -6,12 +6,19 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 13:39:00 by fhenrich          #+#    #+#             */
-/*   Updated: 2021/12/09 16:28:55 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:49:09 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Iterates through the input string and applies the given function
+ * on every character
+ * @param s [char *] pointer to input string
+ * @param f [void *] pointer to function to apply
+ * @return none
+ */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	int		i;

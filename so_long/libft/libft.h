@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:39:49 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/03/09 18:32:49 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:10:17 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-char			*ft_strjoin_gnl(const char *str1, const char *str2);
+char			*ft_strjoin_gnl(char *str1, const char *str2);
 void			*ft_memset(void *ptr, int input, size_t n);
 void			ft_bzero(void *ptr, size_t size);
 void			*ft_memcpy(void *dest, const void *src, size_t n);

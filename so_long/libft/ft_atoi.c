@@ -6,12 +6,18 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:11:54 by fhenrich          #+#    #+#             */
-/*   Updated: 2022/02/06 14:23:40 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/12 12:59:08 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * ft_atoi takes an array and converts it into an integer.
+ * It cuts away every non-printable characters infront of the number
+ * @param src [char *] string to convert
+ * @return the number contained in src as int
+ */
 int	ft_atoi(const char *src)
 {
 	char	first;

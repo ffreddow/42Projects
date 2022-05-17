@@ -6,12 +6,21 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:11:52 by fhenrich          #+#    #+#             */
-/*   Updated: 2021/11/30 18:41:11 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:08:25 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Searches for the first appearence of the second string inside
+ * the first
+ * @param str1 [const char *] pointer to string to search in
+ * @param str2 [const char *] pointer to string to search for
+ * @param n [size_t] max size of second string
+ * @return pointer to first appearence of second string, 0 if it is
+ * not found
+ */
 char	*ft_strnstr(const char *str1, const char *str2, size_t n)
 {
 	const unsigned int	str2_len = ft_strlen(str2);

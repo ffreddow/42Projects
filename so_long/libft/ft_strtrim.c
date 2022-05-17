@@ -6,7 +6,7 @@
 /*   By: fhenrich <fhenrich@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 16:33:15 by fhenrich          #+#    #+#             */
-/*   Updated: 2021/12/20 13:30:17 by fhenrich         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:50:24 by fhenrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ static int	is_in_set(char c, const char *set)
 	return (0);
 }
 
+/**
+ * Creates a new string with the defined characters cut away from the beginning 
+ * and end of the input string
+ * @param s1 [const char *] pointer to input string
+ * @param set [const char *] pointer to set of characters to cut away
+ * @return pointer to newly created string, NULL if an ERROR occured
+ */
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t		start;
