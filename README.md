@@ -15,4 +15,6 @@ pipex:  A recode of the pipe command.
 
 Im currently working on so_long which is about writing a sorting algorithm.
 
+If you wonder why I dont use for loops, do...while loops, switch cases and goto: They are forbidden in all C-Projects.
+
 For any question message me on Discord: Ffreddow#3766
