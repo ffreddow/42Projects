@@ -11,3 +11,9 @@ Usage:
   All maps must be placed inside the maps folder.
   
   To start the game call the program with the map name you want to play as the only argument.
+  
+  Use W, A, S, D to move and ESC to exit.
+
+-------------------------------------------------------------------------
+
+It works pretty simple. If a relevant keystroke is detected by the mlx loop it will jump into the function bound to that key which will first update the gamestate and then trigger an update of the visuals.
