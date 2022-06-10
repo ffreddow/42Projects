@@ -14,6 +14,9 @@ so_long:  This project was about writing a small 2D-Game
 
 pipex:  A recode of the pipe command.
 
+
+
+
 Im currently working on so_long which is about writing a sorting algorithm.
 
 In case you wonder why I dont use for loops, do...while loops, switch cases and goto: They are forbidden in all C-Projects.
