@@ -24,4 +24,4 @@ Im currently working on so_long which is about writing a sorting algorithm.
 
 In case you wonder why I dont use for loops, do...while loops, switch cases and goto: They are forbidden in all C-Projects.
 
-For any question message me on Discord: Ffreddow#3766
+For any questions message me on Discord: Ffreddow#3766
