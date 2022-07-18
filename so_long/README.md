@@ -17,3 +17,5 @@ Usage:
 -------------------------------------------------------------------------
 
 It works pretty simple. If a relevant keystroke is detected by the mlx loop it will jump into the function bound to that key which will first update the gamestate and then trigger an update of the visuals.
+
+Allowed functions were: All functions of the math library, all functions shipped with the minilibx library, all functions from libft, open, close, read, write, malloc, free, perror, strerror, exit
