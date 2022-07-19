@@ -18,6 +18,10 @@ so_long:  This project was about writing a small 2D-Game
 
 pipex:  A recode of the pipe command.
 
+push_swap: This project was about writing an sorting algorythm.
+
+philosophers: An introduction to Posix Threads.
+
 ------------------------------------------
 
 
