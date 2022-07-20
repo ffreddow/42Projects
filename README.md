@@ -3,7 +3,7 @@ Here are all the projects from 42-school I finished so far.
 The projects have the same name as the directories they are in. A detailed description is provided inside each project directory.
 All projects can be compiled by a simple make. "make bonus" for projects where I mention a bonus part. 
 
-WARNING: They are only tested with Linux and MacOS!
+WARNING: They are mostly only tested with MacOS, so there could be some issues while compiling on Linux!
 
 ----------------------------------------
 
